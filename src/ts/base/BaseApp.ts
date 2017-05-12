@@ -45,8 +45,8 @@ export class BaseApp {
 
     this.camera = new THREE.PerspectiveCamera();
     this.camera.position.x = 0;
-    this.camera.position.y = 2;
-    this.camera.position.z = 5;
+    this.camera.position.y = 0;
+    this.camera.position.z = 10;
     this.camera.lookAt(new THREE.Vector3(0, 0, 0));
     let OrbitControls = ThreeOrbitControls(THREE);
     this.cotrols = new OrbitControls(this.camera, this.renderer.domElement);
