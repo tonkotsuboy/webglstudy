@@ -53,9 +53,9 @@ export default class Clock extends THREE.Object3D {
       const longStyle = i % 5 === 0;
       const dot = this.createDot(longStyle);
 
-      dot.position.x = dotDistance * Math.cos((i / dotNum) * 2 * Math.PI);
-      dot.position.y = dotDistance * Math.sin((i / dotNum) * 2 * Math.PI);
-      dot.rotation.z = (90 + (i / dotNum) * 360) * Math.PI / 180;
+      dot.position.x = dotDistance * Math.cos(MathUtil.convertToRadian((i / dotNum) * 360));
+      dot.position.y = dotDistance * Math.sin(MathUtil.convertToRadian((i / dotNum) * 360));
+      dot.rotation.z = MathUtil.convertToRadian((90 + (i / dotNum) * 360));
       this.add(dot);
     }
   }

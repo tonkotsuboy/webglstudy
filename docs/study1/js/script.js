@@ -43881,9 +43881,9 @@ var Clock = (function (_super) {
         for (var i = 0; i < dotNum; i++) {
             var longStyle = i % 5 === 0;
             var dot = this.createDot(longStyle);
-            dot.position.x = dotDistance * Math.cos((i / dotNum) * 2 * Math.PI);
-            dot.position.y = dotDistance * Math.sin((i / dotNum) * 2 * Math.PI);
-            dot.rotation.z = (90 + (i / dotNum) * 360) * Math.PI / 180;
+            dot.position.x = dotDistance * Math.cos(MathUtil_1.default.convertToRadian((i / dotNum) * 360));
+            dot.position.y = dotDistance * Math.sin(MathUtil_1.default.convertToRadian((i / dotNum) * 360));
+            dot.rotation.z = MathUtil_1.default.convertToRadian((90 + (i / dotNum) * 360));
             this.add(dot);
         }
     };
